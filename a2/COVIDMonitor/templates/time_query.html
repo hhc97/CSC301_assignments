@@ -1,0 +1,36 @@
+<!doctype html>
+<title>Query time series</title>
+<h1>Query time series data</h1>
+<body>
+<a href="/">Back to main page</a>
+
+<form method="POST" action="/time">
+    <font size="+3"><b>Select states</b></font>
+    {% for c in states %}
+        <input type="checkbox" value="{{ c }}" name="states">{{ c }}
+    {% endfor %}
+
+    <br><br>
+    <font size="+3"><b>Select countries</b></font>
+    {% for c in countries %}
+        <input type="checkbox" value="{{ c }}" name="countries">{{ c }}
+    {% endfor %}
+
+    <br><br>
+    <font size="+3"><b>Select dates</b></font>
+    {% for c in dates %}
+        <input type="checkbox" value="{{ c }}" name="dates">{{ c }}
+    {% endfor %}
+
+    <br><br>
+    <font size="+3"><b>Select data return type</b></font>
+    <input type="radio" value=0 name="return_type">JSON
+    <input type="radio" value=1 name="return_type">CSV
+    <input type="radio" value=2 name="return_type">Printed text
+
+    <br><br>
+    <input style="height: 100px; width: 200px;" type="submit">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+name: deploy_to_prod_checks
+
+on: [push]
+
+jobs:
+  python_tests:
+    runs-on: ubuntu-latest
+    steps:
+      # checks out repo and upgrades python version
+      - uses: actions/checkout@v2
+      - name: upgrade python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.x'
+      # install html5lib and run python tests
+      - run: pip install html5lib
+      - name: python_test
+        run: |
+          python3 tests.py
+  js_linter:
+    # needs python tests to pass to run
+    needs: python_tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: js_check
+        run: |
+          npm install standard --save-dev
+          npx standard docs/js/main.js --fix
+          git diff
+  deploy_app:
+    # needs js_linter to pass to run
+    needs: js_linter
+    runs-on: ubuntu-latest
+    steps:
+      # checks out current repo and pushes changes to prod
+      - uses: actions/checkout@v2
+      - name: check out prod
+        run: git clone https://hhc97:${{ secrets.PROD_TOKEN }}@github.com/hhc97/csc301_a1.git
+      - name: push to prod
+        run: |
+          git config --global user.email "hc.hu@utoronto.ca"
+          git config --global user.name "Haocheng Hu"
+          rm -rf .git
+          cp -r csc301_a1/.git .
+          rm -rf csc301_a1 .github
+          git add --all
+          git commit -m "`date`"
+          git push

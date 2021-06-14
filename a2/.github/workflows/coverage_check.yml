@@ -1,0 +1,18 @@
+name: pytest_coverage
+
+on: [push]
+
+jobs:
+  coverage_check:
+    runs-on: ubuntu-latest
+    steps:
+      # checks out repo and upgrades python version
+      - uses: actions/checkout@v2
+      - name: upgrade python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.x'
+      - name: run_check
+        run: |
+          pip install -r requirements.txt
+          pytest --cov-report term --cov=COVIDMonitor tests/unit_tests.py

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>CSC301 A1 - Cart</title>
+  <link rel="stylesheet" type="text/css" href="main_style.css">
+</head>
+
+<body>
+  <div class="frame">
+    <h1>Checkout Price Calculator</h1>
+
+    <form id='addToCart'>
+      <div class="inputs">
+        <span>
+          <p>Item Name:</p>
+          <input id="name" type="text" name="itemName" placeholder="Enter Item Name">
+        </span>
+        <span>
+          <p>Cost ($):</p>
+          <input id="cost" type="text" name="itemCost" placeholder="Enter Item Cost">
+        </span>
+      </div>
+      <input id='addButton' type="submit" value="Add Item">
+    </form>
+
+    <div id='cart'>
+      <p id='emptyMessage'>Your Cart is Empty.</p>
+    </div>
+
+    <div id='summary'>
+      <p id='sum1'>Total before Tax: $0.00</p>
+      <p id='sum2'>Tax (13%): $0.00</p>
+      <p id='sum3'>Total: $0.00</p>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

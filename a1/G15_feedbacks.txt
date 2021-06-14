@@ -1,0 +1,60 @@
+Report (40%)
+1. Frontend technology: (75/100)
+Provided very brief comparisons for different languages (React, Angular, JS) based on 5 different considerations.
+More elaboration and details should be included for justification of the design choices.
+
+
+2. Backend (web or mobile): (75/100)
+Provided pros and cons for different alternatives (​Python, JS, node.js​).
+Included some explanations for testing frameworks.
+More elaboration and details should be included for justification of the design choices.
+
+
+3. CI/CD: (75/100)
+Provided very brief explanations for different alternatives (Travis, CircleCI, and GitHub Actions).
+More elaboration and details should be included for justification of the design choices.
+
+4. Database (bonus): (0/50)
+Not included.
+
+Section total:    225/300
+Section percent:    30%/40% 
+
+-------------------------------------------------------
+
+Deployed Application (40%)
+1. The application is functional: (75/100)
+The application is functional overall.
+Didn't include error checking for item price (e.g. for negative numbers)
+
+2. The application’s UI is present and usable: (80/100)
+The UI doesn't have any noticeable visual defects, but can be improved in terms of aesthetic.
+
+3. Testing infrastructure implemented: (75/100)
+Have setup testing infrastructure.
+
+4. Continuous Integration and Continuous Development setup (bonus): (35/50)
+CI/CD is setup and most of the runs were successful.
+
+5. Database Implementation (bonus): (0/50)
+Not implemented
+
+Section total: 265/300
+Section percent: 35.33%/40%
+
+-------------------------------------------------------
+
+Testing Availability(20%)
+1. The application is deployed: (100/100)
+Continuous deployment is setup via GitHub Actions.
+
+2. Instructions for testing are provided: (80/100)
+Included some instructions for the demo in the report (better to include them in the readme file as well).
+
+
+Section total: 180/200
+Section percent: 18%/20%
+
+
+Total Score: 30% + 35.33% + 18% = 83.33%
+Final Mark: 15 * 83.33% = 12.5

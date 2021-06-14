@@ -1,0 +1,49 @@
+<!doctype html>
+<title>Query daily data</title>
+<h1>Query daily data</h1>
+<body>
+<a href="/">Back to main page</a>
+
+<form method="POST" action="/daily">
+    <font size="+3"><b>Select countys</b></font>
+    {% for c in countys %}
+        <input type="checkbox" value="{{ c }}" name="countys">{{ c }}
+    {% endfor %}
+
+    <br><br>
+    <font size="+3"><b>Select states</b></font>
+    {% for c in states %}
+        <input type="checkbox" value="{{ c }}" name="states">{{ c }}
+    {% endfor %}
+
+    <br><br>
+    <font size="+3"><b>Select countries</b></font>
+    {% for c in countries %}
+        <input type="checkbox" value="{{ c }}" name="countries">{{ c }}
+    {% endfor %}
+
+    <br><br>
+    <font size="+3"><b>Select dates</b></font>
+    {% for c in dates %}
+        <input type="checkbox" value="{{ c }}" name="dates">{{ c }}
+    {% endfor %}
+
+    <br><br>
+    <font size="+3"><b>Select data fields</b></font>
+    <input type="checkbox" value=0 name="fields">Deaths
+    <input type="checkbox" value=1 name="fields">Confirmed
+    <input type="checkbox" value=2 name="fields">Active
+    <input type="checkbox" value=3 name="fields">Recovered
+
+    <br><br>
+    <font size="+3"><b>Select data return type</b></font>
+    <input type="radio" value=0 name="return_type">JSON
+    <input type="radio" value=1 name="return_type">CSV
+    <input type="radio" value=2 name="return_type">Printed text
+
+    <br><br>
+    <input style="height: 100px; width: 200px;" type="submit">
+</form>
+
+</body>
+</html>
